@@ -514,6 +514,29 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       github: 'https://github.com/ebenazer890/sms-spam-detector',
       demo: 'https://sms-spam-detector-ebenazer.onrender.com/'
+    },
+    'project-7': {
+      title: 'Loan Approval Prediction',
+      category: 'Machine Learning',
+      image: 'assets/images/project-7.jpg',
+      tags: ['Python', 'Pandas', 'Scikit-learn', 'Decision Tree', 'Streamlit', 'Joblib', 'Git'],
+      overview: 'End-to-end Machine Learning web application using Decision Tree Classification to predict loan application approval based on applicant financial & credit parameters.',
+      problem: 'Manual loan approval evaluation by financial institutions is slow and prone to subjective bias. Automated decision tree models speed up risk assessment with data-driven objectivity.',
+      features: [
+        'Cleaned and preprocessed loan application dataset.',
+        'Handled missing values using Mean and Mode imputation techniques.',
+        'Encoded categorical variables using LabelEncoder for model compatibility.',
+        'Trained and evaluated a Decision Tree Classification model.',
+        'Persisted trained model using Joblib serialization.',
+        'Built an interactive Streamlit web application for real-time predictions.',
+        'Deployed application on Streamlit Community Cloud.'
+      ],
+      improvements: [
+        'Ensemble modeling integration (Random Forest & XGBoost benchmarking).',
+        'SHAP model explainability visualizations for loan approval factor breakdown.'
+      ],
+      github: 'https://github.com/ebenazer890/loan_predictore',
+      demo: 'https://loanpredictore-ebenazer.streamlit.app/'
     }
   };
 
@@ -702,8 +725,8 @@ document.addEventListener('DOMContentLoaded', () => {
       answer: "Ebenazer K holds a Bachelor of Technology (B.Tech) degree in Artificial Intelligence and Data Science (2022–2026) from St. Xavier's Catholic College of Engineering, Nagercoil."
     },
     {
-      keywords: ['projects', 'project', 'deployed', 'apps', 'work', 'churn', 'sales', 'heart', 'spam', 'knowledge'],
-      answer: "Ebenazer has built and deployed 6 full-stack real applications:\n1. Customer Churn Prediction (Streamlit)\n2. Sales Data Analysis Dashboard (Plotly & Streamlit)\n3. Heart Disease Prediction (Streamlit)\n4. Student Performance Prediction (Streamlit)\n5. AI-Power Knowledge Interaction System (RAG & Streamlit)\n6. SMS Spam Detector (Render deployment)."
+      keywords: ['projects', 'project', 'deployed', 'apps', 'work', 'churn', 'sales', 'heart', 'spam', 'knowledge', 'loan', 'approval', 'decision', 'tree'],
+      answer: "Ebenazer has built and deployed 7 full-stack real applications:\n1. Customer Churn Prediction (Streamlit)\n2. Sales Data Analysis Dashboard (Plotly & Streamlit)\n3. Heart Disease Prediction (Streamlit)\n4. Student Performance Prediction (Streamlit)\n5. AI-Power Knowledge Interaction System (RAG & Streamlit)\n6. SMS Spam Detector (Render deployment)\n7. Loan Approval Prediction using Decision Tree (Streamlit Community Cloud)."
     },
     {
       keywords: ['internship', 'internships', 'experience', 'work', 'z3', 'singularium', 'hexcent', 'company', 'role'],
@@ -965,7 +988,7 @@ document.addEventListener('DOMContentLoaded', () => {
       followingElem.textContent = userData.following ?? '0';
 
       if (statusElem) {
-        statusElem.innerHTML = '<i class="fas fa-check-circle" style="color:var(--secondary);"></i> Verified Live GitHub Profile (@ebenazer890)';
+        statusElem.innerHTML = '<i class="fas fa-check-circle" style="color:var(--secondary);"></i> Verified Live GitHub Profile Statistics (@ebenazer890)';
       }
     } catch (err) {
       console.warn('GitHub API fetch fallback active:', err);
@@ -974,7 +997,7 @@ document.addEventListener('DOMContentLoaded', () => {
       followersElem.textContent = '0';
       followingElem.textContent = '0';
       if (statusElem) {
-        statusElem.textContent = 'Live GitHub Profile Active (@ebenazer890)';
+        statusElem.textContent = 'Live GitHub Profile Statistics (@ebenazer890)';
       }
     }
   }

@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <h1 class="welcome-title">Discover <span class="gradient-text">Ebenazer K's</span> AI & ML Universe</h1>
+      <h1 class="welcome-title">Discover <span class="gradient-text name-single-line">Ebenazer K's</span> AI & ML Universe</h1>
       <p class="welcome-subtitle">Step inside to explore deployed machine learning applications, real-time analytics dashboards, and intelligent RAG architectures.</p>
 
       <button id="enter-portfolio-btn" class="btn-enter-portfolio">
@@ -168,7 +168,7 @@
             <span class="status-dot"></span> Available for ML & AI Engineering Roles
           </div>
           <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Ebenazer K</span>
+            Hi, I'm <span class="gradient-text name-single-line">Ebenazer K</span>
           </h1>
           
           <div class="hero-typewriter-container">
@@ -763,6 +763,36 @@
               </div>
             </div>
           </div>
+
+          <!-- Project 7 -->
+          <div class="glass-card project-card" data-category="ml">
+            <div class="project-img-container">
+              <img src="assets/images/project-7.jpg" alt="Loan Approval Prediction using Decision Tree" loading="lazy">
+              <div class="project-overlay">
+                <button class="project-overlay-btn view-project-detail" data-id="project-7" aria-label="View Project Details">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Loan Approval Prediction</h3>
+              <p class="project-desc">
+                Developed a Loan Approval Prediction web application using Decision Tree Classification to predict loan approval likelihood. Features mean/mode missing value imputation, LabelEncoder categorical encoding, Joblib model persistence, and interactive Streamlit deployment.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">Decision Tree</span>
+                <span class="tech-tag">Joblib</span>
+                <span class="tech-tag">Streamlit</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ebenazer890/loan_predictore" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary"><i class="fab fa-github"></i> Repository</a>
+                <a href="https://loanpredictore-ebenazer.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <button class="btn btn-sm btn-secondary view-project-detail" data-id="project-7"><i class="fas fa-info-circle"></i> View Details</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div style="text-align: center; margin-top: 50px;">
@@ -895,31 +925,37 @@
       <div class="container">
         <div class="section-header">
           <span class="section-subtitle">Coding & Performance</span>
-          <h2 class="section-title">GitHub Profile & <span class="gradient-text">Recognition</span></h2>
+          <h2 class="section-title">GitHub Profile & <span class="gradient-text">Statistics</span></h2>
           <p class="section-description">Real-time open-source metrics fetched live from GitHub API and technical highlights.</p>
         </div>
 
         <div class="github-grid" style="margin-bottom: 40px; grid-template-columns: 1fr;">
           <div class="glass-card github-card">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
-              <h4 style="margin:0;"><i class="fab fa-github"></i> GitHub Live Profile Stats (<a href="https://github.com/ebenazer890" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:underline;">@ebenazer890</a>)</h4>
-              <span id="github-loading-status" style="font-size:0.85rem; color:var(--text-muted);"><i class="fas fa-spinner fa-spin"></i> Fetching live stats...</span>
+            <div class="github-header-wrapper">
+              <div class="github-title-box">
+                <i class="fab fa-github github-header-icon"></i>
+                <div class="github-title-info">
+                  <h4 class="github-header-title">GitHub Profile Statistics</h4>
+                  <a href="https://github.com/ebenazer890" target="_blank" rel="noopener noreferrer" class="github-handle-badge">@ebenazer890 <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+              <span id="github-loading-status" class="github-status-badge"><i class="fas fa-spinner fa-spin"></i> Fetching live stats...</span>
             </div>
             <div class="stats-mock-box">
-              <div class="mock-stat-row">
-                <span>Public Repositories:</span>
+              <div class="mock-stat-card">
+                <span class="mock-stat-label"><i class="fas fa-code-branch"></i> Public Repositories</span>
                 <strong id="gh-public-repos" class="gradient-text">20+</strong>
               </div>
-              <div class="mock-stat-row">
-                <span>Total Stars Earned:</span>
+              <div class="mock-stat-card">
+                <span class="mock-stat-label"><i class="fas fa-star"></i> Total Stars</span>
                 <strong id="gh-total-stars" class="gradient-text">...</strong>
               </div>
-              <div class="mock-stat-row">
-                <span>Followers:</span>
+              <div class="mock-stat-card">
+                <span class="mock-stat-label"><i class="fas fa-users"></i> Followers</span>
                 <strong id="gh-followers" class="gradient-text">...</strong>
               </div>
-              <div class="mock-stat-row">
-                <span>Following:</span>
+              <div class="mock-stat-card">
+                <span class="mock-stat-label"><i class="fas fa-user-friends"></i> Following</span>
                 <strong id="gh-following" class="gradient-text">...</strong>
               </div>
             </div>
