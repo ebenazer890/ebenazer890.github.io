@@ -988,7 +988,7 @@ document.addEventListener('DOMContentLoaded', () => {
       followingElem.textContent = userData.following ?? '0';
 
       if (statusElem) {
-        statusElem.innerHTML = '<i class="fas fa-check-circle" style="color:var(--secondary);"></i> Verified Live GitHub Profile Statistics (@ebenazer890)';
+        statusElem.innerHTML = '<i class="fas fa-check-circle" style="color:var(--secondary);"></i> Live GitHub API';
       }
     } catch (err) {
       console.warn('GitHub API fetch fallback active:', err);
@@ -997,7 +997,7 @@ document.addEventListener('DOMContentLoaded', () => {
       followersElem.textContent = '0';
       followingElem.textContent = '0';
       if (statusElem) {
-        statusElem.textContent = 'Live GitHub Profile Statistics (@ebenazer890)';
+        statusElem.textContent = 'Live GitHub Profile (@ebenazer890)';
       }
     }
   }

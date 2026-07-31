@@ -90,6 +90,8 @@ html {
   font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -97,7 +99,9 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
   position: relative;
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
@@ -2622,6 +2626,42 @@ button {
     hyphens: none !important;
   }
 
+  /* Mobile Layout Bounds & Zero Right-Overflow Security */
+  .container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 30px !important;
+  }
+
+  .avatar-container {
+    width: clamp(240px, 75vw, 290px) !important;
+    height: clamp(240px, 75vw, 290px) !important;
+    max-width: 85vw !important;
+    margin: 0 auto !important;
+  }
+
+  .badge-top-left {
+    top: 0px !important;
+    left: 0px !important;
+    font-size: 0.775rem !important;
+    padding: 6px 12px !important;
+  }
+
+  .badge-bottom-right {
+    bottom: 0px !important;
+    right: 0px !important;
+    font-size: 0.775rem !important;
+    padding: 6px 12px !important;
+  }
+
   .section {
     padding: 60px 0;
   }
@@ -2782,16 +2822,167 @@ button {
 
   /* Mobile Structured Layout System across All Sections */
 
-  /* GitHub Clean Header & 2-Column Stats Grid */
+  /* Mobile Structured Layout System across All Sections */
+
+  /* Global Section & Viewport Containment */
+  html, body, main, section, .section, .container, .hero-section {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .glass-card {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Skills & Projects Filter Tabs Wrap */
+  .skills-tabs, .projects-filter {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 20px !important;
+    padding: 0 4px !important;
+  }
+
+  .skill-tab-btn, .filter-btn {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+    border-radius: var(--radius-full) !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 2-Column Grid System for Compact Grid Cards (Skills, Projects, GitHub Stats) */
+  .skills-grid, .projects-grid, .stats-mock-box, .cert-grid, .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 1-Column Full-Width Grid System for Text-Heavy Cards (Achievements & About Highlights) */
+  .achievements-grid, .about-highlights {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .skill-card, .project-card, .mock-stat-card, .cert-card, .highlight-item, .achievement-card, .stat-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Hero Stats Counter Grid Tuning */
+  .stat-card {
+    padding: 14px 8px !important;
+    text-align: center !important;
+  }
+
+  .stat-number {
+    font-size: 1.5rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .stat-label {
+    font-size: 0.725rem !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+  }
+
+  /* Skill Card Internal Layout */
+  .skill-card {
+    padding: 12px 10px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+
+  .skill-header {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .skill-info {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .skill-icon {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 1.05rem !important;
+    flex-shrink: 0 !important;
+    border-radius: 8px !important;
+  }
+
+  .skill-name {
+    font-size: 0.775rem !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--text-primary) !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .skill-percentage {
+    font-size: 0.725rem !important;
+    font-weight: 800 !important;
+    color: var(--accent) !important;
+    background: rgba(168, 85, 247, 0.12) !important;
+    padding: 2px 6px !important;
+    border-radius: var(--radius-full) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .skill-bar-bg {
+    width: 100% !important;
+    height: 5px !important;
+    margin-top: 2px !important;
+  }
+
+  /* GitHub Clean Header & Stats Grid */
   .github-header-wrapper {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    width: 100%;
   }
 
-  .stats-mock-box {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
+  .github-header-title {
+    white-space: normal !important;
+    font-size: 1.1rem !important;
+  }
+
+  .github-status-badge {
+    white-space: normal !important;
+    font-size: 0.8rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
   }
 
   .mock-stat-card {
@@ -2804,107 +2995,86 @@ button {
 
   .mock-stat-label {
     font-size: 0.725rem;
+    white-space: normal !important;
   }
 
-  /* Skills Section 2-Column Grid & Touch Scroll Tabs Layout */
-  .skills-tabs {
+  /* About Highlights 1-Column Spacious Layout */
+  .highlight-item {
+    padding: 12px 14px !important;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
     display: flex !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    padding-bottom: 8px !important;
-    margin-bottom: 22px !important;
-    justify-content: flex-start !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    align-items: center !important;
+    gap: 12px !important;
   }
 
-  .skills-tabs::-webkit-scrollbar {
-    display: none;
-  }
-
-  .skill-tab-btn {
-    padding: 7px 15px !important;
-    font-size: 0.775rem !important;
+  .highlight-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    font-size: 1.1rem !important;
     flex-shrink: 0 !important;
   }
 
-  .skills-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-  }
-
-  .skill-card {
-    padding: 12px 10px !important;
-    border-radius: 12px !important;
-  }
-
-  .skill-name {
-    font-size: 0.775rem !important;
-    font-weight: 700 !important;
-  }
-
-  .skill-percentage {
-    font-size: 0.75rem !important;
-  }
-
-  /* About Highlights 2-Column Grid Layout */
-  .about-highlights {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-  }
-
-  .highlight-item {
-    padding: 8px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 10px;
-  }
-
   .highlight-content h4 {
-    font-size: 0.8rem;
+    font-size: 0.875rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 2px !important;
   }
 
   .highlight-content p {
-    font-size: 0.725rem;
+    font-size: 0.775rem !important;
+    color: var(--text-secondary) !important;
   }
 
   /* Certifications 2-Column Grid Layout */
-  .cert-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-  }
-
   .cert-card {
-    padding: 14px 10px !important;
+    padding: 12px 10px !important;
   }
 
   .cert-info h4 {
-    font-size: 0.825rem !important;
+    font-size: 0.8rem !important;
+    word-break: normal !important;
   }
 
   .cert-issuer, .cert-date {
     font-size: 0.7rem !important;
   }
 
-  /* Achievements 2-Column Grid Layout */
+  /* Achievements 1-Column Spacious Readable Layout (Clean Wording Alignment) */
   .achievements-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
+    grid-template-columns: 1fr !important;
   }
 
   .achievement-card {
-    padding: 14px 10px !important;
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .achievement-icon {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    font-size: 1.25rem !important;
+    flex-shrink: 0 !important;
+    border-radius: 10px !important;
   }
 
   .achievement-info h4 {
-    font-size: 0.825rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px !important;
   }
 
   .achievement-info p {
-    font-size: 0.725rem !important;
+    font-size: 0.825rem !important;
+    line-height: 1.45 !important;
+    color: var(--text-secondary) !important;
   }
 
   /* Timeline Mobile Tuning */
@@ -2964,7 +3134,7 @@ button {
   }
 
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 10px !important;
   }
 
